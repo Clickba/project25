@@ -1,6 +1,6 @@
 from google.cloud import pubsub_v1
 from google.cloud import storage
-def hello_gcs(event, context):
+def main(event, context):
     publisher = pubsub_v1.PublisherClient()
     topic_path = "projectsgcp-6th-academy-364009topicstopic_demo_acasa"
     data_str = "Message aaaaaaaaaaaaaaaaaaaaaaa"
