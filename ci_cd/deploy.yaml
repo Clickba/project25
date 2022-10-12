@@ -14,6 +14,6 @@ steps:
     - main
     - --region=europe-west3
     - --source=./foldercomumnomecorreto
-    - --trigger-http
+    - --trigger-bucket=example_files_acasa
     - --runtime=python310
     waitFor: ['-']
