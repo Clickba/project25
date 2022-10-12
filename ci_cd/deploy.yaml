@@ -1,5 +1,5 @@
 steps:
   - name: 'bash'
-    args: ['echo', 'Hello World']
+    args: ['gcloud app deploy']
     id: 'hello_world'
     waitFor: ['-']
