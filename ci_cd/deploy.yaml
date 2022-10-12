@@ -1,6 +1,5 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: bash
+  - name: 'bash'
     args: ['echo', 'Hello World']
     id: 'hello_world'
     waitFor: ['-']
