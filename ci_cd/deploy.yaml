@@ -1,6 +1,17 @@
 steps:
+  #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  #  entrypoint: 'gcloud'
+  #  args: ['app','deploy']
+  #  id: 'trigger_to_deploy'
+  #  waitFor: ['-']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    args: ['app','deploy']
-    id: 'trigger_to_deploy'
+    args:
+    - gcloud
+    - functions
+    - deploy
+    - cloudfunction.py
+    - --region=europe-west3
+    - --source=.
+    - --trigger-http
+    - --runtime=python310
     waitFor: ['-']
