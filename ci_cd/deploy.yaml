@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
+  - name: 'gcloud'
     args: ["app", "deploy"]
     id: 'hello_world'
     waitFor: ['-']
