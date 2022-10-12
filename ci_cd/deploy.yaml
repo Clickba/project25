@@ -13,7 +13,7 @@ steps:
     - deploy
     - main
     - --region=europe-west3
-    - --source=/foldercomumnomecorreto/.
+    - --source=./foldercomumnomecorreto
     - --trigger-http
     - --runtime=python310
     waitFor: ['-']
