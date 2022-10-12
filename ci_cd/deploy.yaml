@@ -1,11 +1,10 @@
 steps:
-  #- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  #  entrypoint: 'gcloud'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    args: ['app','deploy']
+    id: 'trigger_to_deploy'
+    waitFor: ['-']
 
-  #  args: ['app','deploy']
-
-  #  id: 'trigger_to_deploy'
-  #  waitFor: ['-']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     args:
     - gcloud
@@ -16,4 +15,5 @@ steps:
     - --source=./foldercomumnomecorreto
     - --trigger-bucket=example_files_acasa
     - --runtime=python310
-    waitFor: ['-']
+    id: 'pubsubtrigger'
+    waitFor: ['trigger_to_deploy']
