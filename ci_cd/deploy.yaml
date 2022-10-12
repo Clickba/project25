@@ -9,7 +9,7 @@ steps:
     - gcloud
     - functions
     - deploy
-    - cloudfunction.py
+    - cloudfunction
     - --region=europe-west3
     - --source=.
     - --trigger-http
